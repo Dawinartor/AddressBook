@@ -27,14 +27,23 @@ public class Addressbook{
     
     // TODO: Method to add Person Object in LinkedList.
     public boolean addPerson(Person person){
-        Person seperateSpace = person;
+        Person comparisonObject = person;
+        boolean successfull = false;
+    // add Method have to check if the, to add object, is already in the list:
+    // IF no: add the new Person-Object in the list -> return true.
+    // IF yes: return false.
 
         for (Iterator i = _addressbook.iterator(); i.hasNext();) {
-
-        if(_addressbook.add(person)){
-            return true;
-        } else {}
-        ;
+            if(comparisonObject.equals(i)){
+                System.out.println("ACHTUNG: Objekt ist bereits vorhanden.");
+                successfull = false;
+            } else {
+                _addressbook.add(comparisonObject);
+                successfull = true;
+            }
+        }
+        return successfull;
+    
     }
 
     // TODO: Method to remove Person Objekt.
