@@ -6,7 +6,11 @@ public class AddressbookManager{
     private Addressbook _addressbook;
     private Person _person;
 
-    
+    // Manager works with specific Addressbook.
+    public AddressbookManager(Addressbook addressbook){
+        this._addressbook = addressbook;
+    }
 
+    
 
 }

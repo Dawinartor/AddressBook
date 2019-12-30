@@ -1,3 +1,4 @@
+import java.util.Iterator;
 import java.util.LinkedList;
 
 // Only the List to save the Person-Objects in.
@@ -14,7 +15,6 @@ public class Addressbook{
     }
 
 
-    // Need this Class the ability to add and delet Objects in it?
     // Class - Methods:
     @Override
     public String toString() {
@@ -22,6 +22,28 @@ public class Addressbook{
             " _addressbook='" + getAddressbook() + "'" +
             "}";
     }
+
+    // Need this Class the ability to add and delet Objects in it?
+    
+    // TODO: Method to add Person Object in LinkedList.
+    public boolean addPerson(Person person){
+        Person seperateSpace = person;
+
+        for (Iterator i = _addressbook.iterator(); i.hasNext();) {
+
+        if(_addressbook.add(person)){
+            return true;
+        } else {}
+        ;
+    }
+
+    // TODO: Method to remove Person Objekt.
+
+    // TODO: Method to edit specific Person Object, that already exists, in LinkedList.
+
+    // TODO: Method to save the content of LinkedList permanently.
+
+
 
 
     // Getter and Setter:
