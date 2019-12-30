@@ -43,10 +43,16 @@ public class Addressbook{
             }
         }
         return successfull;
-    
     }
 
+
     // TODO: Method to remove Person Objekt.
+    public boolean removePerson(Person person){
+        Person comparisPerson = person;
+        boolean successfull = false;
+
+        
+    }
 
     // TODO: Method to edit specific Person Object, that already exists, in LinkedList.
 
