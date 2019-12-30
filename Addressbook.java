@@ -23,22 +23,25 @@ public class Addressbook{
             "}";
     }
 
-    // Need this Class the ability to add and delet Objects in it?
     
-    // TODO: Method to add Person Object in LinkedList.
+    /** 
+     * add Method have to check if the, to add object, is already in the list:
+     * IF no: add the new Person-Object in the list -> return true.
+     * IF yes: return false.
+     * 
+     * @param Person person
+     * @return boolean successfull
+     */
     public boolean addPerson(Person person){
-        Person comparisonObject = person;
+        Person comparisonPerson = person;
         boolean successfull = false;
-    // add Method have to check if the, to add object, is already in the list:
-    // IF no: add the new Person-Object in the list -> return true.
-    // IF yes: return false.
-
-        for (Iterator i = _addressbook.iterator(); i.hasNext();) {
-            if(comparisonObject.equals(i)){
+    
+        for (Iterator i = _addressbook.iterator(); i.hasNext(); i.next()) {
+            if(comparisonPerson.equals(i)){
                 System.out.println("ACHTUNG: Objekt ist bereits vorhanden.");
                 successfull = false;
             } else {
-                _addressbook.add(comparisonObject);
+                _addressbook.add(comparisonPerson);
                 successfull = true;
             }
         }
@@ -46,14 +49,22 @@ public class Addressbook{
     }
 
 
-    // TODO: Method to remove Person Objekt.
     public boolean removePerson(Person person){
-        Person comparisPerson = person;
+        Person comparisonPerson = person;
         boolean successfull = false;
 
-        
+        for (Iterator i = _addressbook.iterator(); i.hasNext(); i.next()) { 
+            if(comparisonPerson.equals(i)){
+                _addressbook.remove(i);
+                successfull = true;
+            } else {
+                successfull = false;
+            }
+        }
+        return successfull;
     }
 
+        
     // TODO: Method to edit specific Person Object, that already exists, in LinkedList.
 
     // TODO: Method to save the content of LinkedList permanently.
