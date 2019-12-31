@@ -25,7 +25,7 @@ public class Addressbook{
 
     
     /** 
-     * add Method have to check if the, to add object, is already in the list:
+     * Add Method have to add new Person into the list:
      * IF no: add the new Person-Object in the list -> return true.
      * IF yes: return false.
      * 
@@ -36,9 +36,9 @@ public class Addressbook{
         Person comparisonPerson = person;
         boolean successfull = false;
     
-        for (Iterator i = _addressbook.iterator(); i.hasNext(); i.next()) {
+        for (Iterator<Person> i = _addressbook.iterator(); i.hasNext(); i.next()) {
             if(comparisonPerson.equals(i)){
-                System.out.println("ACHTUNG: Objekt ist bereits vorhanden.");
+                System.out.println("ACHTUNG: Kontakt ist bereits vorhanden.");
                 successfull = false;
             } else {
                 _addressbook.add(comparisonPerson);
@@ -52,10 +52,10 @@ public class Addressbook{
     public boolean removePerson(Person person){
         Person comparisonPerson = person;
         boolean successfull = false;
-
-        for (Iterator i = _addressbook.iterator(); i.hasNext(); i.next()) { 
+        // Is "<Person>" needed for Iterator? -> Which benefits?
+        for (Iterator<Person> i = _addressbook.iterator(); i.hasNext(); i.next()) { 
             if(comparisonPerson.equals(i)){
-                _addressbook.remove(i);
+                _addressbook.remove(comparisonPerson);
                 successfull = true;
             } else {
                 successfull = false;
